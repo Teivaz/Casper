@@ -2,14 +2,16 @@ name: Deploy Theme
 on:
   push:	
     branches:	
-      - master
+      - site/gapak
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
+        with:
+          ref: site/gapak
       - uses: TryGhost/action-deploy-theme@v1.2.0
         with:
-          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL_GAPAK }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY_GAPAK }}
           theme-name: "casper-master"
