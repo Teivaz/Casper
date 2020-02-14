@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      with:
-        ref: site/teivaz
+        with:
+          ref: site/teivaz
       - uses: TryGhost/action-deploy-theme@v1.2.0
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL_TEIVAZ }}
